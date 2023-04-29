@@ -9,10 +9,8 @@ const add = (req, res) => {
     const sql = `INSERT INTO score (stu_id, course_id, term, score, score_remark) VALUES (?, ?, ?, ?, ?)`; 
     const params = [stu_id, course_id, term, score, score_remark]
     insert(sql, params, result => {
-
-        res.json({mss:"成绩添加成功"})
+        res.json({mss:"成绩添加成功", params})
         
-
     })
 }
 

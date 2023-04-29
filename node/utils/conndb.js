@@ -6,12 +6,12 @@ const pool = mysql.createPool({
   host: "127.0.0.1",
   user: "root",
   password: process.env.PASSWORD,
-  port: 3307,
+  port: 3306,
   database: "student_management_system",
   waitForConnections: true, // 设置为 true，允许等待直到有可用连接
   connectionLimit: 10, // 连接池大小，设置为你需要的大小
   queueLimit: 0, // 不限制请求队列长度
-  acquireTimeout: 10000, // 设置获取连接的超时时间为
+  
 })
 
 const insert = (sql, params, callback) => {
@@ -26,7 +26,7 @@ const insert = (sql, params, callback) => {
       if (err) {
         conn.release();
         callback(err);
-        conn.release();
+   
         return;
       }
       const insertedData = {
