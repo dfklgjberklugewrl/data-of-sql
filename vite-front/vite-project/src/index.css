@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.dark {
+    /* 晚上主题 */
+    background-color: black;
+    color: white;
+  }
