@@ -29,9 +29,9 @@ const Students = () => {
     const fetchStudents = async () => {
       const res = await fetch('http://127.0.0.1:3001/student/students');
       const students = await res.json();
-      
+
       setStudents(students);
-      console.log(students  )
+      console.log(students)
     };
 
     fetchStudents();
