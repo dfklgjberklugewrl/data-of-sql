@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
+import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,12 +37,14 @@ const Students = () => {
     };
 
     fetchStudents();
-  }, []);
+  }, [students]);
 
 
   const classes = useStyles();
 
-
+  const deleteStudent = () => {
+    
+  }
   const getDisplayedStudents = () => {
     const startIndex = (currentPage - 1) * PAGE_SIZE;
     const endIndex = startIndex + PAGE_SIZE;
@@ -51,13 +55,15 @@ const Students = () => {
   const totalPages = Math.ceil(total / PAGE_SIZE);
 
   return (
-
-    <>
+    // {/*  */}
+    <div>
       <div class="center" >
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
             <TableHead>
+              <Link href="/"><Button variant="contained" color='primary'>返回</Button></Link>
               <TableRow>
+
                 <TableCell>学生姓名</TableCell>
                 <TableCell align="right"></TableCell>
                 <TableCell align="right">性别&nbsp;</TableCell>
@@ -76,6 +82,7 @@ const Students = () => {
                   <TableCell align="right">{student.stu_gender}</TableCell>
                   <TableCell align="right">{student.stu_type}</TableCell>
                   <TableCell align="right">{student.stu_enrollment_date}</TableCell>
+                  <TableCell align="right">  <Button variant="contained" color='primary' onChange={deleteStudent}>删除</Button></TableCell>
                 </TableRow>
               ))}
 
@@ -91,7 +98,7 @@ const Students = () => {
 
         />
       </div>
-    </>
+    </div>
   );
 };
 

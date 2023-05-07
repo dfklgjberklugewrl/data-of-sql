@@ -17,7 +17,8 @@ import Image from "next/image";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/Index.module.css'
 import Typography from '@mui/material/Typography';
-import Form from "../components/Form"
+import Link from 'next/link'
+
 
 
 
@@ -60,7 +61,7 @@ export default function Home() {
           <item></item>
         </Grid>
 
-
+        {/* 内容 */}
         <Grid xs={3} sx={
           {
             backgroundColor: "black",
@@ -101,7 +102,7 @@ export default function Home() {
                 objectFit: "cover",
                 overflow: "hidden"
               }}>
-                <Image src={cover} layout='fill'/>
+                <Image src={cover} layout='fill' />
               </Box>
             </ThemeProvider>
           </item>
@@ -138,7 +139,7 @@ export default function Home() {
               overflow: "hidden"
             }}
             >
-              <Image src={department2} layout='fill'/>
+              <Image src={department2} layout='fill' />
               <Typography variant="h3" gutterBottom sx={{
                 color: 'white',
                 position: 'relative',
@@ -690,9 +691,8 @@ export default function Home() {
           </item>
         </Grid>
       </Grid>
-    
-    
-    <Form />
+
+
     </ div>
 
   );
